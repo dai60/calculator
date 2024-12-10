@@ -2,6 +2,7 @@
 
 const input = document.getElementById("calculator-input");
 const previousSpan = document.getElementById("previous");
+const calculatorHistory = document.getElementById("history-list");
 
 const current = {
     input: "0",
@@ -83,6 +84,10 @@ function onActionInput(action) {
 function onCalculate() {
     current.b = current.input;
     current.result = calculate(current);
+    if (current.result !== "error") {
+        calculatorHistory.innerHTML += `<li>${current.a} ${current.action} ${current.b} = ${current.result}</li>`;
+    }
+
     showCurrent();
 }
 
