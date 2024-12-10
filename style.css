@@ -135,6 +135,8 @@ main {
 #history {
     width: 100%;
     max-width: 400px;
+    overflow-y: auto;
+
     box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.2);
     background-color: lightyellow;
 }

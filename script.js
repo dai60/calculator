@@ -4,6 +4,10 @@ const input = document.getElementById("calculator-input");
 const previousSpan = document.getElementById("previous");
 const calculatorHistory = document.getElementById("history-list");
 
+window.addEventListener("load", function () {
+    document.getElementById("history").style.maxHeight = document.getElementById("calculator").scrollHeight + "px";
+});
+
 const current = {
     input: "0",
     a: undefined,
@@ -87,7 +91,6 @@ function onCalculate() {
     if (current.result !== "error") {
         calculatorHistory.innerHTML += `<li>${current.a} ${current.action} ${current.b} = ${current.result}</li>`;
     }
-
     showCurrent();
 }
 
