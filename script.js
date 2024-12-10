@@ -33,15 +33,21 @@ function calculate(object) {
 }
 
 document.addEventListener("keydown", function (event) {
-    const actions = ["+", "-", "*", "/", "="];
+    const actions = ["+", "-", "*", "/"];
     if (actions.includes(event.key)) {
         onActionInput(event.key);
     }
     else if (event.key >= '0' && event.key <= '9') {
         onNumberInput(event.key);
     }
-    else if (event.key === "Enter") {
+    else if (event.key === "." || event.key === ",") {
+        onDecimal();
+    }
+    else if (event.key === "Enter" || event.key === "=") {
         onCalculate();
+    }
+    else if (event.key === "Backspace") {
+        onBackspace();
     }
     else if (event.key === "Escape") {
         onClear();
@@ -80,6 +86,13 @@ function onCalculate() {
     showCurrent();
 }
 
+function onBackspace() {
+    if (current.input !== "0") {
+        current.input = current.input.slice(0, current.input.length - 1);
+    }
+    showCurrent();
+}
+
 function onClear() {
     current.input = "0";
     current.a = undefined;
@@ -87,6 +100,13 @@ function onClear() {
     current.b = undefined;
     current.result = undefined;
 
+    showCurrent();
+}
+
+function onDecimal() {
+    if (!current.input.includes(".")) {
+        current.input += ".";
+    }
     showCurrent();
 }
 
