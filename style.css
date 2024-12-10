@@ -18,18 +18,30 @@ body {
     background-color: white;
 }
 
-#calculator > input {
+#calculator > .input-container {
+    position: relative;
+    overflow: hidden;
+}
+
+#calculator > .input-container > span {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+#calculator > .input-container > input {
     width: 100%;
-    padding: 1em;
+    padding: 1.25em 0.5em 0.75em 0.5em;
     margin-top: 0.25em;
     margin-bottom: 0.5em;
 
     border: 1px solid gray;
     border-radius: 0.25em;
-    padding: 0.75em 0;
 
-    font-size: 1.5em;
+    font-size: 1.75em;
     text-align: right;
+    direction: rtl;
+    overflow: hidden;
 
     cursor: default;
 }
