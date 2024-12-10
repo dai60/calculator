@@ -110,6 +110,16 @@ function onDecimal() {
     showCurrent();
 }
 
+function onPlusMinus() {
+    if (!current.input.startsWith("-")) {
+        current.input = "-" + current.input;
+    }
+    else {
+        current.input = current.input.slice(1);
+    }
+    showCurrent();
+}
+
 function showCurrent() {
     if (current.result === undefined) {
         input.value = current.input;
