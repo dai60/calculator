@@ -141,14 +141,27 @@ main {
     background-color: lightyellow;
 }
 
-#history > p {
-    margin: 0.5em 1em;
+#history > #history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    font-size: 1em;
     font-family: "Homemade Apple";
+
+    margin: 0.5em 1em;
+}
+
+#history > #history-header > p {
+    font-size: 1em;
     font-style: italic;
 
     color: rgba(0, 0, 0, 0.75);
+}
+
+#history > #history-header > a {
+    font-size: 1.25em;
+    color: red;
+    cursor: pointer;
 }
 
 #history > #history-list {
@@ -161,14 +174,14 @@ main {
     font-size: 2em;
     font-weight: 400;
     font-family: "Homemade Apple";
-
-    margin-top: -1em;
+    line-height: 1em;
 
     color: rgba(0, 0, 0, 0.65);
 }
 
 @media screen and (max-width: 900px) {
-    body {
+    main {
         flex-direction: column;
+        align-items: center;
     }
 }

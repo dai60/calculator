@@ -5,7 +5,7 @@ const previousSpan = document.getElementById("previous");
 const calculatorHistory = document.getElementById("history-list");
 
 window.addEventListener("load", function () {
-    document.getElementById("history").style.maxHeight = document.getElementById("calculator").scrollHeight + "px";
+    document.getElementById("history").style.minHeight = document.getElementById("calculator").scrollHeight + "px";
 });
 
 const current = {
@@ -147,4 +147,8 @@ function showCurrent() {
         }
     }
     previousSpan.textContent = span;
+}
+
+function clearHistory() {
+    calculatorHistory.innerHTML = "";
 }
